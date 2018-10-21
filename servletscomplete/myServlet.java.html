@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>myServlet.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+myServlet.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">import </span><span class="s1">javax.servlet.ServletException; 
+</span><span class="s0">import </span><span class="s1">javax.servlet.annotation.WebServlet; 
+</span><span class="s0">import </span><span class="s1">javax.servlet.http.HttpServlet; 
+</span><span class="s0">import </span><span class="s1">javax.servlet.http.HttpServletRequest; 
+</span><span class="s0">import </span><span class="s1">javax.servlet.http.HttpServletResponse; 
+</span><span class="s0">import </span><span class="s1">java.io.IOException; 
+</span><span class="s0">import </span><span class="s1">java.io.PrintWriter; 
+</span><span class="s0">import </span><span class="s1">java.lang.String; 
+ 
+@WebServlet(name = </span><span class="s2">&quot;myServlet&quot;</span><span class="s1">) 
+</span><span class="s0">public class </span><span class="s1">myServlet </span><span class="s0">extends </span><span class="s1">HttpServlet { 
+    </span><span class="s0">protected void </span><span class="s1">doPost(HttpServletRequest request, HttpServletResponse response) </span><span class="s0">throws </span><span class="s1">ServletException, IOException { 
+ 
+ 
+ 
+        response.setContentType(</span><span class="s2">&quot;text/html&quot;</span><span class="s1">); 
+ 
+        PrintWriter out = response.getWriter(); 
+ 
+ 
+ 
+ 
+        String Name = request.getParameter(</span><span class="s2">&quot;name&quot;</span><span class="s1">); 
+ 
+        String Name2 = request.getParameter(</span><span class="s2">&quot;name2&quot;</span><span class="s1">); 
+        String pass = request.getParameter(</span><span class="s2">&quot;pass&quot;</span><span class="s1">); 
+        String gender = request.getParameter(</span><span class="s2">&quot;gender&quot;</span><span class="s1">); 
+        </span><span class="s0">boolean </span><span class="s1">agree = request.getParameter(</span><span class="s2">&quot;agree&quot;</span><span class="s1">) != </span><span class="s0">null</span><span class="s1">; 
+        String[] roles = request.getParameterValues(</span><span class="s2">&quot;role&quot;</span><span class="s1">); 
+        String countryCode = request.getParameter(</span><span class="s2">&quot;countryCode&quot;</span><span class="s1">); 
+        String[] animalIds = request.getParameterValues(</span><span class="s2">&quot;animalId&quot;</span><span class="s1">); 
+        String message = request.getParameter(</span><span class="s2">&quot;message&quot;</span><span class="s1">); 
+ 
+ 
+        out.println(</span><span class="s2">&quot;Name &quot;</span><span class="s1">+  Name); 
+ 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+ 
+        out.println(</span><span class="s2">&quot; Last Name &quot;</span><span class="s1">+Name2); 
+ 
+       out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+ 
+        out.println(</span><span class="s2">&quot;typed password is &quot;</span><span class="s1">+pass); 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+ 
+        out.println(</span><span class="s2">&quot;Gender is &quot;</span><span class="s1">+gender); 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+        out.println(</span><span class="s2">&quot;Approve &quot;</span><span class="s1">+agree); 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+ 
+        </span><span class="s0">for</span><span class="s1">(String s : roles) 
+        { 
+            out.println(s); 
+        } 
+ 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+        out.println(</span><span class="s2">&quot;The country code is &quot; </span><span class="s1">+ countryCode); 
+ 
+ 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+ 
+        </span><span class="s0">for</span><span class="s1">(String e : animalIds) 
+        { 
+            out.println(</span><span class="s2">&quot;Animal selection is &quot;</span><span class="s1">+e); 
+        } 
+ 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+        out.println(</span><span class="s2">&quot;Your message is &quot;</span><span class="s1">+message); 
+        out.println(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="s1">); 
+ 
+        out.println(</span><span class="s2">&quot;It is working&quot;</span><span class="s1">); 
+ 
+    } 
+ 
+    </span><span class="s0">protected void </span><span class="s1">doGet(HttpServletRequest request, HttpServletResponse response) </span><span class="s0">throws </span><span class="s1">ServletException, IOException { 
+ 
+    } 
+} 
+</span></pre>
+</body>
+</html>
